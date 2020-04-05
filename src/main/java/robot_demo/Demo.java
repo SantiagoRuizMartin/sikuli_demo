@@ -3,8 +3,7 @@ package robot_demo;
 import org.sikuli.script.FindFailed;
 import org.sikuli.script.Screen;
 
-import java.awt.*;
-import java.io.IOException;
+
 import java.net.URISyntaxException;
 import java.net.URL;
 
@@ -40,7 +39,7 @@ public class Demo {
         }
     }
 
-    private void pressSendButton() {
+    public void pressSendButton() {
         try {
             screen.find(basePath + "sendButton.PNG").click();
         } catch (FindFailed findFailed) {
@@ -48,7 +47,7 @@ public class Demo {
         }
     }
 
-    private void goToHeaders() {
+    public void goToHeaders() {
         try {
             screen.find(basePath + "headers.PNG").click();
         } catch (FindFailed findFailed) {
@@ -56,7 +55,7 @@ public class Demo {
         }
     }
 
-    private void fixTest() {
+    public void fixTest() {
         try {
             screen.find(basePath + "im5.PNG").click();
             screen.find(basePath + "im5.PNG").right(80).click();
@@ -66,23 +65,11 @@ public class Demo {
         }
     }
 
-    private void ValidateResuts() {
+    public void ValidateResuts() {
         try {
             screen.find(basePath + "im4.PNG");
         } catch (FindFailed findFailed) {
             findFailed.printStackTrace();
         }
     }
-
-    public static void main(String[] args) {
-        Demo demo = new Demo();
-        demo.startPostman();
-        demo.goToConsumerTab();
-        demo.pressSendButton();
-        demo.goToHeaders();
-        demo.fixTest();
-        demo.ValidateResuts();
-    }
-
-
 }
